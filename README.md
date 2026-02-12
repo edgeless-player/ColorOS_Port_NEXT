@@ -1,20 +1,19 @@
 <div align="center">
 
-# ColorOS 移植项目
+#  ColorOS/OxygenOS 移植项目
 
 简体中文&nbsp;&nbsp;|&nbsp;&nbsp;[English](/README_en-US.md) 
 
 </div>
 
 ## 简介
-- ColorOS 一键自动移植打包
+- ColorOS/OxygenOS 一键自动移植打包
 
 ## 支持机型
 
-- 一加8系列（一加8、一加8Pro、一加8T、一加9R）
-- 一加9系列（OnePlus 9、OnePlus9RT、OnePlus9Pro）
-- Oppo Find X3、Oppo Find X3 Pro
-
+- 一加8系列（OnePlus8、OnePlus8Pro、OnePlus8T、OnePlus9R）
+- 一加9系列（OnePlus9、OnePlus9RT、OnePlus9Pro）
+- OPPOFindX3、OPPOFindX3Pro
 
 ## 测试机型及版本
 BASE:
@@ -34,15 +33,15 @@ PORT:
 - 指纹
 - 相机
 - NFC
-- 自动亮度
 - etc
+- 自动亮度
 - 小布语音唤醒
 - 关机充电
 
 ## BUG
-
 - AOD亮度太低
 - 有线耳机不可用
+- 亮度条异常（C16）
 
 ## 如何使用
 - 在Ubuntu、Deepin等Linux下
@@ -53,7 +52,7 @@ PORT:
     sudo apt install git -y
     # 克隆项目
     git clone https://github.com/xwdy114514/ColorOS_Port_Co-create.git
-    cd coloros_port_kebab
+    cd ColorOS_Port_Co-create
     # 安装依赖
     sudo ./setup.sh
     # 开始移植
