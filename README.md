@@ -12,13 +12,8 @@
 ## 支持机型
 
 - 一加8系列（一加8、一加8Pro、一加8T、一加9R）
-- 一加9系列（OnePlus 9、OnePlus9 RT、OnePlus9 Pro）
+- 一加9系列（OnePlus 9、OnePlus9R、OnePlus9Pro）
 - Oppo Find X3、Oppo Find X3 Pro
-
-## 测试机型及版本
-- BASE: OnePlus 8T (ColorOS_14.0.0.600), OnePlus 8 (ColorOS_IN2010_13.1.190), OnePlus 8 Pro (ColorOS_IN2020_13.1.0.190)
-- PORT: OnePlus 12 (ColorOS_14.0.0.800), OnePlus ACE3V(ColorOS_14.0.1.621)
-
 
 ## 正常工作
 - 人脸
