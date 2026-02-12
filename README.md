@@ -12,7 +12,7 @@
 ## 支持机型
 
 - 一加8系列（一加8、一加8Pro、一加8T、一加9R）
-- 一加9系列（OnePlus 9、OnePlus9R、OnePlus9Pro）
+- 一加9系列（OnePlus 9、OnePlus9RT、OnePlus9Pro）
 - Oppo Find X3、Oppo Find X3 Pro
 
 
