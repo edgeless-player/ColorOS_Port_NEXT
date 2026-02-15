@@ -18,12 +18,15 @@
 ## 测试机型及版本
 BASE:
 - OnePlus 8T (ColorOS_14.0.0.600)
-- OnePlus 8 (ColorOS_IN2010_13.1.190)
-- OnePlus 8Pro (ColorOS_IN2020_13.1.0.190)
+- OnePlus 8 (ColorOS_13.1.190)
+- OnePlus 8Pro (ColorOS_13.1.0.190)
+- OnePlus 9（ColorOS_14.0.0.1901）
+- OnePlus 9Pro（ColorOS_14.0.0.1901）
+- OnePlus 9RT（ColorOS_14.0.0.2401）
 
 PORT:
 - OnePlus 12 (ColorOS_14.0.0.800)
-- OnePlus 13（ColorOS_15.0.840）
+- OnePlus 13（ColorOS_15.0.0.840）
 - OnePlusAce6T（ColorOS_16.0.3.503）
 
 ## 正常工作
