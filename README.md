@@ -26,7 +26,6 @@ PORT:
 - OnePlus 13（ColorOS_15.0.840）
 - OnePlusAce6T（ColorOS_16.0.3.503）
 
-
 ## 正常工作
 - 人脸
 - 挖孔
@@ -70,3 +69,9 @@ PORT:
 - [「lpunpack」by unix3dgforce](https://github.com/unix3dgforce/lpunpack)
 - [「miui_port」by ljc-fight](https://github.com/ljc-fight/miui_port)
 - etc
+
+## 注
+- 严禁以商品形式将该项目的任何内容（包括打包后的移植包）转卖出去，这是极其无耻的，没有道德底线的行为
+- 我们在任何平台发现这种情况，将会选择创建一个文档，将这类情况集中收集到文档中
+- 欢迎大佬或者有能力的人发送issue为我们项目提供帮助，该项目永久开源
+- 在此处向所有曾经为本项目付出努力的人致以最崇高的感谢，同时也向所有移植作者致以最崇高的感谢
