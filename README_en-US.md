@@ -1,14 +1,14 @@
 <div align="center">
 
 
-# ColorOS Porting Project
+# ColorOS/OxygenOS Porting Project
 
 [简体中文](/README.md)&nbsp;&nbsp;|&nbsp;&nbsp;English
 
 </div>
 
 ## Intro
-- ColorOS Porting Project
+- ColorOS/OxygenOS Porting Project
 
 ## Supported Devices
 
@@ -17,8 +17,13 @@
 - Oppo Find X3 Oppo Find X3 Pro
 
 ## Tested devices and portroms
-- Test Base ROM:  OnePlus 8T (ColorOS_14.0.0.600), OnePlus 8 (ColorOS_IN2010_13.1.190), OnePlus 8 Pro (ColorOS_IN2020_13.1.0.190)
-- Test Port ROM: OnePlus 12 (ColorOS_14.0.0.800), OnePlus ACE3V(ColorOS_14.0.1.621)
+- Test Base ROM:  
+OnePlus 8T (ColorOS_14.0.0.600), 
+OnePlus 8 (ColorOS_IN2010_13.1.190), 
+OnePlus 8 Pro (ColorOS_IN2020_13.1.0.190)
+- Test Port ROM: 
+OnePlus 12 (ColorOS_14.0.0.800), 
+OnePlus ACE3V(ColorOS_14.0.1.621)
 
 ## Working
 - Face unlock
@@ -62,3 +67,10 @@
 - [「lpunpack」by unix3dgforce](https://github.com/unix3dgforce/lpunpack)
 - [「miui_port」by ljc-fight](https://github.com/ljc-fight/miui_port)
 - etc
+
+## Notes：
+People with the ability are welcome to send issues to help our project, which is open source permanently.
+
+Here, I would like to express my highest gratitude to all those who have worked hard for this project, as well as to all the contributors.
+
+Since the author of this branch project is a student, his English is poor, and the Readme is translated, if there is any mistake, please send an issue to remind me, and I will modify it immediately.
