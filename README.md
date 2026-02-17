@@ -28,6 +28,7 @@ PORT:
 - OnePlus 12 (ColorOS_14.0.0.800)
 - OnePlus 13（ColorOS_15.0.0.840）
 - OnePlusAce6T（ColorOS_16.0.3.503）
+- OnePlus 12 (ColorOS_16.0.3.500)
 
 ## 正常工作
 - 人脸
