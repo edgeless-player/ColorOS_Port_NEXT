@@ -50,8 +50,7 @@ PORT:
 - 在Ubuntu、Deepin等Linux下
 （WSL环境下的Linux也可以）
 ```shell
-    sudo apt update
-    sudo apt upgrade
+    sudo apt update && sudo apt upgrade -y
     sudo apt install git -y
     # 克隆项目
     git clone https://github.com/xwdy114514/ColorOS_Port_Co-create.git
