@@ -23,9 +23,3 @@ if [ "$(uname -m)" == "aarch64" ];then
     apt upgrade -y
     apt install -y python busybox zip unzip p7zip openjdk-21 zipalign zstd xmlstarlet
 fi
-
-if [ "$(uname)" == "Darwin" ] && [ "$(uname -m)" == "x86_64" ];then
-    echo "Devcie arch: MacOS X86_X64"
-    pip3 install buysbox
-    brew install aria2 openjdk zstd coreutils gdu gnu-sed gnu-getopt grep xmlstarlet
-fi
