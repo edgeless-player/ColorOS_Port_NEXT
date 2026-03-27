@@ -244,7 +244,7 @@ if [[ -n ${version_name} ]] && [[ -d build/${version_name} ]]; then
          "Cached ${version_name} folder detected, copying..."
     IFS=',' read -ra PARTS <<< "$port_partition"
     for i in "${PARTS[@]}"; do
-        cp -rfv "build/${version_name}/${i}.img" build/portrom/images/
+        ln "build/${version_name}/${i}.img" build/portrom/images/
     done
 
 else
@@ -253,7 +253,7 @@ else
     if [[ ${portrom_type} == 'payload' ]]; then
         blue "正在提取移植包 [payload.bin]" "Extracting PORTROM [payload.bin]"
         payload-dumper-go -c 16 -p "${port_partition}" -o "build/${version_name}/" "${portrom}"
-        cp -rfv build/${version_name}/*.img build/portrom/images/
+        ln -f build/${version_name}/*.img build/portrom/images/
         green "移植包 [payload.bin] 提取完毕" "[payload.bin] extracted."
 
     elif [[ ${portrom_type} == 'img' ]]; then
@@ -275,7 +275,7 @@ else
           "Failed to extract specified img files from PORTROM."
 
          green "指定分区镜像解压完成" "Selected partitions extracted successfully."
-        find "build/${version_name}/" -type f -name "*.img" -exec cp -fv {} build/portrom/images/ \;
+        find "build/${version_name}/" -type f -name "*.img" -exec ln -f {} build/portrom/images/ \;
         green "移植包 [*.img] 提取完毕" "[*.img] extracted."
 
     else
@@ -292,7 +292,7 @@ if [[ -n ${version_name2} ]] && [[ -d build/${version_name2} ]];then
         #     skip_list2+=("$i")
         #     cp -rfv build/${version_name}/${i}_patched.img build/portrom/images/${i}.img
         #else 
-            cp -rfv build/${version_name2}/${i}.img build/portrom/images/
+            ln -f build/${version_name2}/${i}.img build/portrom/images/
         #fi
     done
 elif [[ -n ${version_name2} ]];then
@@ -301,7 +301,7 @@ elif [[ -n ${version_name2} ]];then
         mkdir -p build/${version_name2}/
         payload-dumper-go -c 16 -p ${port_partition} -o build/${version_name2}/ $portrom2
         for i in "${mix_port_part[@]}"; do
-            cp -rfv build/${version_name2}/${i}.img build/portrom/images/
+            ln -f build/${version_name2}/${i}.img build/portrom/images/
         done
     elif [[ ${portrom2_type} == 'img' ]]; then
         blue "检测到移植包2类型为 [img]" "Extracting PORTROM containing .img files"
@@ -322,7 +322,7 @@ elif [[ -n ${version_name2} ]];then
           "Failed to extract specified img files from PORTROM."
 
          green "指定分区镜像解压完成" "Selected partitions extracted successfully."
-        find "build/${version_name2}/" -type f -name "*.img" -exec cp -fv {} build/portrom/images/ \;
+        find "build/${version_name2}/" -type f -name "*.img" -exec ln -f {} build/portrom/images/ \;
         green "移植包 [*.img] 提取完毕" "[*.img] extracted."
     fi
 fi
@@ -1033,8 +1033,8 @@ yellow "删除多余的App" "Debloating..."
 debloat_apps=("HeartRateDetect" "Browser" "ConsumerIRApp" "ADS" "KeKePay" "OplusSecurityKeyboard" "Pictorial" "LinktoWindows" "KeKeAppDetail")
 #kept_apps=("Clock" "FileManager" "KeKeThemeSpace" "SogouInput" "Weather" "Calendar")
 #kept_apps=("BackupAndRestore" "Calculator2" "Calendar" "Clock" "FileManager" "OppoNote2" "OppoWeather2" "UPTsmService" "Music")
-kept_apps=("Weather" "Calendar" "Clock" "FileManager" "OppoNote2" "OppoWeather2")
-#kept_apps=()
+#kept_apps=("Calendar" "Clock" "FileManager" "OppoNote2")
+kept_apps=("Clock")
 
 if [[ $super_extended == "true" ]] && [[ $pack_method == "stock" ]] && [[ -f build/baserom/images/reserve.img ]]; then
     rm -rf build/baserom/images/reserve.img
@@ -1240,10 +1240,12 @@ cp -rf build/baserom/images/my_product/etc/fusionlight_profile/*  build/portrom/
 sed -i "/persist.vendor.display.pxlw.iris_feature=.*/d" build/portrom/images/my_product/etc/bruce/build.prop
 
 if grep -q "ro.build.version.oplusrom.display" build/portrom/images/my_manifest/build.prop;then
-    sed -i '/^ro.build.version.oplusrom.display=/ s/$/ | Ported By 🅱🆃/' build/portrom/images/my_manifest/build.prop
+    sed -i '/^ro.build.version.oplusrom.display=/ s/$/ | Co-Create/' build/portrom/images/my_manifest/build.prop
 else
-    sed -i '/^ro.build.version.oplusrom.display=/ s/$/ | Ported By 🅱🆃/' build/portrom/images/my_product/etc/bruce/build.prop
+    sed -i '/^ro.build.version.oplusrom.display=/ s/$/ | Co-Create/' build/portrom/images/my_product/etc/bruce/build.prop
 fi
+
+
 
 propfile="build/portrom/images/my_product/etc/bruce/build.prop"
 
@@ -1381,9 +1383,9 @@ oplus_features=(
     "oplus.software.radio.ai_link_boost"
     "oplus.software.radio.ai_link_boost_notification"
     "oplus.software.radio.ai_link_boost_railway_notification"
-    "oplus.software.systemui.pin_task^钉到流体云"
+    #"oplus.software.systemui.pin_task^钉到流体云"
     "oplus.software.radio.hfp_comm_shared_support^iPhone互联"
-    "oplus.hardware.display.motion_sickness^晕动舒缓提示"
+    #"oplus.hardware.display.motion_sickness^晕动舒缓提示"
 )
 
 for oplus_feature in ${oplus_features[@]}; do 
@@ -1706,7 +1708,7 @@ elif [[ $baseIsColorOSCN == "true" && ( $portIsColorOSGlobal == "true" || $portI
     rm -rf build/portrom/images/my_product/media/bootanimation
     cp -rf build/baserom/images/my_product/media/bootanimation build/portrom/images/my_product/media/
 fi
- 
+
 rm -rf build/portrom/images/my_product/media/quickboot
 cp -rf build/baserom/images/my_product/media/quickboot build/portrom/images/my_product/media/
 if [[ -f devices/common/wallpaper.zip ]] && [[ "$portIsColorOSGlobal" == "false" ]] && [[ "$portIsOOS" == "false" ]] && [[ "$port_android_version" -lt 16 ]];then
@@ -1958,6 +1960,10 @@ if [[ -f "devices/${base_product_device}/odm_selinux_fix_a16.zip" ]] && [[ $port
     unzip -o devices/${base_product_device}/odm_selinux_fix_a16.zip -d ${work_dir}/build/portrom/images/
 fi
 
+if [[ -f devices/${base_product_device}/boot.img ]]; then
+  cp -rfv devices/${base_product_device}/boot.img build/baserom/images/
+fi
+
 for zip in $(find devices/${base_product_device}/ -name "*.zip"); do
     if unzip -l $zip | grep -q "anykernel.sh" ;then
         blue "检查到第三方内核压缩包 $zip [AnyKernel类型]" "Custom Kernel zip $zip detected [Anykernel]"
@@ -2121,35 +2127,31 @@ for img in $(find build/baserom/ -type f -name "vbmeta*.img");do
     python3 bin/patch-vbmeta.py ${img} > /dev/null 2>&1
 done
 if [[ -f devices/${base_product_device}/recovery.img ]]; then
-  cp -rfv devices/${base_product_device}/recovery.img build/baserom/images/
+  ln -f devices/${base_product_device}/recovery.img build/baserom/images/
 fi
 
-if [[ -f devices/${base_product_device}/boot.img ]]; then
-  cp -rfv devices/${base_product_device}/boot.img build/baserom/images/
-fi
-
-if [[ -f devices/${base_product_device}/boot.zip ]]; then
-  unzip devices/${base_product_device}/boot.zip -d build/baserom/images/
+if [[ -f devices/${base_product_device}/dtbo.img ]]; then
+  ln -f devices/${base_product_device}/dtbo.img build/baserom/images/
 fi
 
 if [[ -f devices/${base_product_device}/vendor_boot.img ]]; then
-  cp -rfv devices/${base_product_device}/vendor_boot.img build/baserom/images/
+  ln -f devices/${base_product_device}/vendor_boot.img build/baserom/images/
 fi
 
 if [[ -f devices/${base_product_device}/abl.img ]]; then
-  cp -rfv devices/${base_product_device}/abl.img build/portrom/images/
+  ln -f devices/${base_product_device}/abl.img build/portrom/images/
 fi
 
 if [[ -f devices/${base_product_device}/odm.img ]]; then
-  cp -rfv devices/${base_product_device}/odm.img build/portrom/images/
+  ln -f devices/${base_product_device}/odm.img build/portrom/images/
 fi
 
 if [[ -f devices/${base_product_device}/tz.img ]]; then
-  cp -rfv devices/${base_product_device}/tz.img build/baserom/images/
+  ln -f devices/${base_product_device}/tz.img build/baserom/images/
 fi
 
 if [[ -f devices/${base_product_device}/keymaster.img ]]; then
-  cp -rfv devices/${base_product_device}/keymaster.img build/baserom/images/
+  ln -f devices/${base_product_device}/keymaster.img build/baserom/images/
 fi
 
 if [[ $is_ab_device == true ]]; then
