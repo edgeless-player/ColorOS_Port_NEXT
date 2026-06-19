@@ -10,25 +10,14 @@
 - ColorOS/OxygenOS 一键自动移植打包
 
 ## 支持机型
-
-- 一加8系列（OnePlus8、OnePlus8Pro、OnePlus8T、OnePlus9R）
-- 一加9系列（OnePlus9、OnePlus9RT、OnePlus9Pro）
-- OPPOFindX3、OPPOFindX3Pro
+- OnePlus8T
 
 ## 测试机型及版本
 BASE:
-- OnePlus 8T (ColorOS_14.0.0.600)
-- OnePlus 8 (ColorOS_13.1.190)
-- OnePlus 8Pro (ColorOS_13.1.0.190)
-- OnePlus 9（ColorOS_14.0.0.1901）
-- OnePlus 9Pro（ColorOS_14.0.0.1901）
-- OnePlus 9RT（ColorOS_14.0.0.2401）
-
+- OnePlus 8T (ColorOS_14.0.0.602)
 PORT:
-- OnePlus 12 (ColorOS_14.0.0.800)
-- OnePlus 13（ColorOS_15.0.0.840）
-- OnePlusAce6T（ColorOS_16.0.3.503）
-- OnePlus 12 (ColorOS_16.0.3.500)
+- OnePlus Ace6T（ColorOS_16.0.5.702）
+- OnePlus 15 (ColorOS_16.0.7.206)
 
 ## 正常工作
 - 人脸
@@ -43,25 +32,24 @@ PORT:
 
 ## BUG
 - AOD亮度太低
-- 有线耳机不可用（存疑）
+- 模拟音频输出不可用
 - 亮度条异常（C16）
 
 ## 如何使用
-- 在Ubuntu、Deepin等Linux下
-（WSL环境下的Linux也可以）
+- 在Ubuntu下
 ```shell
     sudo apt update && sudo apt upgrade -y
     sudo apt install git -y
     # 克隆项目
-    git clone https://github.com/xwdy114514/ColorOS_Port_Co-create.git
-    cd ColorOS_Port_Co-create
+    git clone https://github.com/edgeless-player/ColorOS_Port_NEXT.git
+    cd ColorOS_Port_NEXT
     # 安装依赖
     sudo ./setup.sh
     # 开始移植
     sudo ./port.sh <底包路径> <移植包路径>
 ```
 - 路径可以是系统包链接，将路径替换为系统包下载链接即可
-- 请确保设备的运行内存足够使用，通常需要16G以上，存储空间请预留大约160G
+- 请确保设备的运行内存足够使用，通常需要空闲8G以上，存储空间请预留大约100G
 
 ## 感谢
 > 本项目使用了以下开源项目的部分或全部内容，感谢这些项目的开发者（排名顺序不分先后）。
