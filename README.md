@@ -15,6 +15,7 @@
 ## 测试机型及版本
 BASE:
 - OnePlus 8T (ColorOS_14.0.0.602)
+  
 PORT:
 - OnePlus Ace6T（ColorOS_16.0.5.702）
 - OnePlus 15 (ColorOS_16.0.7.206)
